@@ -16,7 +16,7 @@ const app = express();
 // CORS Using localStorage , bearer token
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN, // e.g. http://localhost:5173
+    origin: process.env.CLIENT_ORIGIN, // dev http://localhost:5173
     credentials: false,
   })
 );
