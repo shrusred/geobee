@@ -5,7 +5,7 @@ import { requireAuth } from "../middleware/auth.js";
 
 const router = express.Router();
 
-// ---- node-cache (data cached period in seconds; setting to 24 hours as data not expected to change much) ----
+//  node-cache (data cached period in seconds; setting to 24 hours as data not expected to change much) ----
 const CACHE_TTL_SEC = Number(process.env.CACHE_TTL_SEC || 24 * 60 * 60);
 const cache = new NodeCache({ stdTTL: CACHE_TTL_SEC });
 

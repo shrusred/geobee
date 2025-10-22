@@ -21,26 +21,26 @@ app.use(
   })
 );
 
-// --- Core middleware ---
+// Core middleware
 app.use(helmet());
 app.use(express.json());
 
-// --- Public routes ---
+// Public routes
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
 app.use("/api/auth", authRoutes);
 
-// --- Geobee feature routes
+// Geobee feature routes
 app.use("/api", countriesRoutes);
 app.use("/api/favorites", favoritesRoutes);
 
-// --- Error handler at end
+// Error handler at end
 app.use((err, _req, res, _next) => {
   console.error(err);
   const status = err.status || 500;
   res.status(status).json({ error: err.message || "Internal Server Error" });
 });
 
-// --- Start server ---
+// Start server
 const PORT = process.env.PORT || 4000;
 
 async function startServer() {
@@ -58,6 +58,6 @@ async function startServer() {
 }
 
 //test
-console.log("Environment:", process.env.NODE_ENV);
+//console.log("Environment:", process.env.NODE_ENV);
 
 startServer();
