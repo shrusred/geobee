@@ -1,0 +1,122 @@
+:root {
+  --primary: #0066ff;
+  --text: #1f2937;
+  --text-muted: #374151;
+  --border: #e5e7eb;
+  --bg: #fff;
+}
+
+/* Header shell */
+.navbar {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+/* Inner container */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Left group: logo + links */
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Right group: email + logout */
+.right-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Logo (bigger) + app name */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  font-size: 1.125rem; /* 18px */
+  padding: 0.4rem 0.65rem;
+  border-radius: 9999px;
+  transition: background 0.2s, color 0.2s;
+}
+.logo-link img {
+  height: 2.25rem; /* 36px -> bigger logo */
+  width: 2.25rem;
+  object-fit: contain;
+}
+.logo-link.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.nav-link {
+  font-size: 0.95rem;
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 9999px; /* pill */
+  transition: background 0.2s, color 0.2s;
+}
+.nav-link:hover {
+  background: #f3f4f6;
+}
+.nav-link.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Email + logout */
+.user-email {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 14rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logout-btn {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.4rem;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.logout-btn:hover {
+  background: #f9fafb;
+}
+.logout-btn:active {
+  background: #f3f4f6;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .nav-container {
+    align-items: flex-start;
+  }
+  .nav-links {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+}

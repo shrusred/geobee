@@ -1,0 +1,216 @@
+/* === Global font + variables ============================================ */
+:root {
+  --font-sans: "Noto Sans", system-ui, Arial, sans-serif;
+  --text-primary: #111;
+  --primary: #0066ff;
+  --surface: #f9f9fb;
+}
+
+/* Make the font cascade everywhere, including form controls */
+html {
+  font-family: var(--font-sans);
+}
+body,
+input,
+button,
+textarea,
+select {
+  font-family: var(--font-sans) !important;
+}
+
+/* Layout */
+body {
+  margin: 0;
+  background: #fafafa;
+  color: #222;
+}
+
+/* Header */
+.navbar {
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: #111;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.nav-links a:hover {
+  background: #eee;
+}
+
+.login-btn {
+  background: #0066ff;
+  color: #fff !important;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+.login-btn:hover {
+  background: #004bcc;
+}
+
+/* Main content */
+.main-container {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+/* Login page */
+.login-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-container input,
+.login-container button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background: #004bcc;
+}
+
+/* Auth shared styles */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background: var(--surface);
+}
+
+.auth-card {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  width: 100%;
+}
+
+.auth-card h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.auth-card label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.auth-card input {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.15);
+}
+
+.btn-primary {
+  margin-top: 1rem;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #004bcc;
+}
+
+.auth-links {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.auth-links .link {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.auth-links .link:hover {
+  text-decoration: underline;
+}
