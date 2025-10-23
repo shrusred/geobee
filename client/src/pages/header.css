@@ -25,21 +25,21 @@
   flex-wrap: wrap;
 }
 
-/* Left group: logo + links */
+/* Left group - logo and link */
 .left-group {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-/* Right group: email + logout */
+/* Right group: email and logout */
 .right-group {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-/* Logo (bigger) + app name */
+/* Logo (bigger)  */
 .logo-link {
   display: flex;
   align-items: center;
@@ -84,7 +84,7 @@
   color: #fff;
 }
 
-/* Email + logout */
+/* Email and logout */
 .user-email {
   font-size: 0.9rem;
   color: var(--text-muted);

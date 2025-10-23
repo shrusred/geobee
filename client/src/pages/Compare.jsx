@@ -61,7 +61,7 @@ const authHeaders = () => {
   return token ? { Authorization: `Bearer ${token}` } : {};
 };
 
-/* Build OpenStreetMap embed URL from lat/lng (no Nominatim/Google) */
+/* Build OpenStreetMap embed URL based on lat/lng  */
 function buildOsmEmbedSrc(lat, lng) {
   const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
   const delta = 2; /* degrees around centroid */
@@ -91,13 +91,13 @@ export default function Compare() {
   const [detailA, setDetailA] = useState(null);
   const [detailB, setDetailB] = useState(null);
 
-  // Map coords via REST Countries
+  // Map coords from REST Countries external api
   const [coordsA, setCoordsA] = useState(null); // { lat, lng }
   const [coordsB, setCoordsB] = useState(null); // { lat, lng }
   const [mapErrA, setMapErrA] = useState("");
   const [mapErrB, setMapErrB] = useState("");
 
-  // Load all countries (protected)
+  // Load all countries
   useEffect(() => {
     let alive = true;
     (async () => {
@@ -365,7 +365,7 @@ export default function Compare() {
             </div>
           </section>
 
-          {/* Single shared Compare + helper */}
+          {/* Single shared Compare  */}
           <section style={{ gridColumn: "1 / -1" }}>
             <div className="compare-actions">
               <button

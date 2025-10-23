@@ -17,7 +17,7 @@ export default function Header() {
     <header className="navbar">
       <nav className="nav-container">
         <div className="left-group">
-          {/* Logo + Home (active pill when on /home) */}
+          {/* Logo and home (active pill when on /home) */}
           <NavLink
             to="/home"
             className={({ isActive }) =>

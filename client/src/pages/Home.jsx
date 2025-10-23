@@ -15,7 +15,7 @@ export default function Home() {
   const [noteText, setNoteText] = useState("");
   const [favoriteId, setFavoriteId] = useState(null);
 
-  // Filters + selection
+  // Filters selection
   const [region, setRegion] = useState("");
   const [countryQuery, setCountryQuery] = useState("");
   const [selected, setSelected] = useState(null);
@@ -51,7 +51,7 @@ export default function Home() {
     return Array.from(s).sort((a, b) => a.localeCompare(b));
   }, [countries]);
 
-  // Filtered countries by region + query
+  // Filtered countries by region and query
   const filteredCountries = useMemo(() => {
     if (!region) return [];
     const q = countryQuery.trim().toLowerCase();
@@ -88,7 +88,7 @@ export default function Home() {
     setFavoriteId(null);
   }, [selected?.code]);
 
-  // Hydrate favorite for selected country
+  // Fill out favorite heart for selected country
   useEffect(() => {
     let ignore = false;
     async function loadFav() {

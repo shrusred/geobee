@@ -17,7 +17,7 @@
   --med: 0.125rem; /* ~2px */
 }
 
-/* Page shell ensures reliable space under Header via row-gap */
+/* Page shell for implementing spacing */
 .fav-page {
   display: grid;
   grid-template-rows: auto 1fr;

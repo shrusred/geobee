@@ -1,6 +1,6 @@
 :root {
-  --a: #aff0af; /* Country A highlight (green) */
-  --b: #d9b084; /* Country B highlight (orange-brown) */
+  --a: #aff0af; /* Country A highlight - green */
+  --b: #d9b084; /* Country B highlight - orange-brown */
   --text: #222;
   --muted: #777;
   --border: #cfd6dd;
@@ -18,7 +18,7 @@
   --med: 0.125rem; /* ~2px */
 }
 
-/* Page shell grid ensures space under header via row-gap (no margin collapse) */
+/* Page shell grid */
 .page-shell {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -27,14 +27,14 @@
   background: var(--bg);
 }
 
-/* Local container (self-contained; does NOT use global .main-container) */
+/* Local container */
 .compare-main {
   max-width: 75rem; /* ~1200px */
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Selectors + VS + results layout */
+/* Selectors  */
 .compare-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -49,7 +49,7 @@
   }
 }
 
-/* Single VS element (visible only on wide screens) */
+/* Single VS element*/
 .vs {
   display: none;
 }
@@ -163,7 +163,7 @@
   color: var(--muted);
 }
 
-/* Single shared Compare button + helper */
+/* Single shared compare button and helper */
 .compare-actions {
   display: grid;
   justify-items: center;
@@ -291,7 +291,7 @@
   color: #444;
 }
 
-/* Narrow tablets: put selectors side-by-side; hide VS for simplicity */
+/* Narrow tablets*/
 @media (min-width: 37.5rem) and (max-width: 56.1875rem) {
   /* 600–899px */
   .compare-container {

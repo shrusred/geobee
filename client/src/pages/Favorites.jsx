@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import Header from "./Header.jsx";
 import "./favorites.css";
 
-/* API base + endpoints */
+/* API base and endpoints */
 const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 const FAVS_URL = `${API_BASE}/api/favorites`;
 const COUNTRIES_URL = `${API_BASE}/api/countries`;

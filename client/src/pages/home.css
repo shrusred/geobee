@@ -15,7 +15,7 @@
   grid-template-rows: auto 1fr;
 }
 
-/* Space from header + centered content */
+/* Space from header and centered content */
 .home-main {
   padding: 1.25rem 1rem 2rem;
 }
@@ -41,7 +41,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
-/* Left rail (sticky) */
+/* Left rail sticky */
 .left-rail {
   position: sticky;
   top: 1rem;
