@@ -29,6 +29,7 @@
 1. Add more metrics from REST Countries and other public APIs like the World Bank.
 2. Improve styling with better logo sizing, CSS, and animations.
 3. Add map exploration features — drop pins, make notes, and visualize terrain such as mountains and rivers.
+4. Improve responsive design and UX layout
 
 ---
 
