@@ -4,56 +4,47 @@
   --text-muted: #374151;
   --border: #e5e7eb;
   --bg: #fff;
+  --ring: rgba(0, 102, 255, 0.35);
 }
 
 /* Header shell */
 .navbar {
   width: 100%;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 0.0625rem solid var(--border);
   background: var(--bg);
 }
 
-/* Inner container */
+/* Container becomes grid on mobile, flex on desktop */
 .nav-container {
-  max-width: 1200px;
+  max-width: 75rem; /* ~1200px */
   margin: 0 auto;
   padding: 0.75rem 1rem;
+  color: var(--text);
+}
+
+/* Top row: brand + burger */
+.brand-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  flex-wrap: wrap;
 }
 
-/* Left group - logo and link */
-.left-group {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* Right group: email and logout */
-.right-group {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-/* Logo (bigger)  */
+/* Logo (pill) */
 .logo-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
-  color: #111;
+  color: var(--text);
   font-weight: 700;
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem;
   padding: 0.4rem 0.65rem;
   border-radius: 9999px;
   transition: background 0.2s, color 0.2s;
 }
 .logo-link img {
-  height: 2.25rem; /* 36px -> bigger logo */
+  height: 2.25rem;
   width: 2.25rem;
   object-fit: contain;
 }
@@ -62,10 +53,58 @@
   color: #fff;
 }
 
-/* Nav links */
-.nav-links {
-  display: flex;
+/* Hamburger */
+.menu-toggle {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  border: 0.0625rem solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+}
+.menu-toggle:focus-visible {
+  outline: 0.125rem solid var(--ring);
+  outline-offset: 0.125rem;
+}
+.menu-bars,
+.menu-bars::before,
+.menu-bars::after {
+  content: "";
+  display: block;
+  width: 1.25rem;
+  height: 0.125rem;
+  background: var(--text);
+  border-radius: 0.125rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.menu-bars::before {
+  transform: translateY(-0.35rem);
+}
+.menu-bars::after {
+  transform: translateY(0.35rem);
+}
+
+/* Collapsible menu on mobile */
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.22s ease;
+}
+.menu.open {
+  max-height: 20rem;
+}
+
+/* Links group (stacked on mobile) */
+.nav-links {
+  display: grid;
+  grid-auto-flow: row;
   gap: 0.25rem;
 }
 .nav-link {
@@ -73,7 +112,7 @@
   color: var(--text);
   text-decoration: none;
   padding: 0.4rem 0.75rem;
-  border-radius: 9999px; /* pill */
+  border-radius: 9999px;
   transition: background 0.2s, color 0.2s;
 }
 .nav-link:hover {
@@ -84,20 +123,26 @@
   color: #fff;
 }
 
-/* Email and logout */
+/* Account section (stacked on mobile) */
+.account-actions {
+  display: grid;
+  gap: 0.5rem;
+  align-items: center;
+}
 .user-email {
   font-size: 0.9rem;
   color: var(--text-muted);
-  max-width: 14rem;
+  max-width: 20rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+/* Logout button (matches your old style) */
 .logout-btn {
   font-size: 0.9rem;
   padding: 0.4rem 0.65rem;
-  border: 1px solid #d1d5db;
+  border: 0.0625rem solid #d1d5db;
   border-radius: 0.4rem;
   background: #fff;
   cursor: pointer;
@@ -109,14 +154,54 @@
 .logout-btn:active {
   background: #f3f4f6;
 }
+.logout-btn:focus-visible {
+  outline: 0.125rem solid var(--ring);
+  outline-offset: 0.125rem;
+}
 
-/* Small screens */
-@media (max-width: 600px) {
+/* ------- Desktop (≥ 48rem) ------- */
+@media (min-width: 48rem) {
   .nav-container {
-    align-items: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
   }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu {
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
   .nav-links {
+    display: inline-flex;
     gap: 0.5rem;
-    flex-wrap: wrap;
+  }
+
+  .account-actions {
+    display: inline-flex;
+    gap: 1rem;
+  }
+
+  .user-email {
+    max-width: 18rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .menu,
+  .menu-bars,
+  .menu-bars::before,
+  .menu-bars::after {
+    transition: none;
   }
 }
