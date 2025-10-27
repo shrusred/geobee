@@ -19,8 +19,8 @@
 
 ## Deployment
 
-- **Frontend:** Vercel
-- **Backend:** Render
+- **Frontend:** Vercel | Link - https://geobee.vercel.app/login
+- **Backend:** Render | Link - https://geobee-backend.onrender.com
 
 ---
 
